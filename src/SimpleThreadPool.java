@@ -12,7 +12,7 @@ public class SimpleThreadPool {
 			if(args.length == 0 ) args = new String[] {"10"};
 		        ExecutorService executor = Executors.newFixedThreadPool(Integer.parseInt(args[0]));
 		        for (int i = 0; i < 10; i++) {
-		            Runnable worker = new WorkerThread("" + i);
+		            Runnable worker = new WorkerThread(i);
 		            executor.execute(worker);
 		          }
 		        executor.shutdown();

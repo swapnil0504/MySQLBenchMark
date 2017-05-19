@@ -7,9 +7,10 @@ class MySQLConenctor {
 		try{
 			Class.forName("com.mysql.jdbc.Driver");
 			 con = DriverManager.getConnection(
-					"jdbc:mysql://localhost:3306/db", "user", "password");
+					"jdbc:mysql://192.168.41.18:3306/test", "root", "P@ssw0rd");
 		}catch(Exception e){
-			System.out.println("ERROR while connecting MYSQL");
+			e.printStackTrace();
+			System.out.println("ERROR while connecting MYSQL"+e.getMessage());
 		}
 		return con;
 	}
